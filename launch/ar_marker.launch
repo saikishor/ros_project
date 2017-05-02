@@ -1,0 +1,10 @@
+<!-- -->
+<launch>
+<!--  <include file="$(find ar_pose)/launch/intros_ar_pose.launch"/> -->
+  <include file="$(find ros_project)/launch/ar_pose_multi.launch"/>
+  <node name="ar_marker" pkg ="ros_project" type="ros_marker" output ="screen" >
+	<remap from="/ar_pose/Markers" to="/ar_pose_marker"/> 
+  </node>
+<!--  <node pkg="ros_project" type="ros_marker" name="AR_marker" output="screen"> </node> -->
+  <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="Dynamic_reconfigure" output="screen"> </node>
+</launch>

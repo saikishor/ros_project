@@ -1,0 +1,14 @@
+<launch>
+	<node name="ar_pose_front" pkg="ar_pose" type="ar_single" respawn="false" output="screen">
+		<param name="marker_frame" type="string" value="marker_2"/>
+		<param name="marker_pattern" type="string" value="data/4x4/4x4_8.patt"/>
+		<param name="marker_width" type="double" value="150"/>
+		<param name="marker_center_x" type="double" value="0.0"/>
+		<param name="marker_center_y" type="double" value="0.0"/>
+		<param name="threshold" type="int" value="100"/>
+		<param name="use_history" type="bool" value="false"/>
+		<remap from="/camera/camera_info" to="/ardrone/front/camera_info"/>
+		<remap from="/camera/camera_raw" to="/ardrone/front/camera_raw"/>
+	</node>
+</launch>
+

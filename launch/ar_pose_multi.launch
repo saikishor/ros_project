@@ -1,0 +1,10 @@
+<!-- -->
+<launch>
+  <node name="ar_pose" pkg ="ar_pose" type="ar_multi" respawn="false" output="screen">
+    <param name="marker_pattern_list" type="string" value="$(find ar_pose)/data/object_4x4"/>
+    <param name="threshold"       type="int"    value="80"/>
+    <param name="use_history"     type="bool"   value="true"/>
+    <remap from="/camera/camera_info" to="/ardrone/camera_info"/>
+    <remap from="/camera/image_raw" to="/ardrone/image_raw"/>
+  </node>
+</launch>
